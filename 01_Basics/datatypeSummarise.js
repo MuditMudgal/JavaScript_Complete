@@ -14,3 +14,21 @@ console.log(id1===id2)
 // let num = 643547654335434
 let num = 643547654335434n
 console.log(num)
+
+
+
+//Stack and Heap Memory
+let a = 10;
+let b = a;
+b = 1000;
+
+console.log(a);
+console.log(b);
+
+//reference 
+let userOne = {
+    email:"abc@google.com",
+    upi:"jhsbjh"
+}
+
+let userTwo = userOne
