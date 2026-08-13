@@ -13,6 +13,14 @@
 // console.log(myarr);
 // myarr.pop()
 
+//Unshift --adding element to first 
+myarr.unshift(9) //9 0 1 2 3 4 5 
+//shift  --remove element from first 
+myarr.shift() //0 1 2 3 4 5
+myarr.shift() // 1 2 3 4 5
+
+
+
 //join
 // const arr = [0,1,2,3,4,5,6]
 // console.log(arr)
