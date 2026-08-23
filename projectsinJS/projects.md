@@ -29,3 +29,27 @@ buttons.forEach(function (button) {
 });
 
 ```
+## Project 2 (BMI Calculator)
+
+``` javascript
+
+    const form = document.querySelector('form')
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  const height = parseInt(document.querySelector('#height').value)
+  const weight = parseInt(document.querySelector('#weight').value)
+  const result = document.querySelector('#results')
+  if(height === '' || isNaN(height) || height < 0 ){
+    result.innerHTML = `Please Enter Valid Value of height not ${height}`;
+  }
+  else if(weight === '' || isNaN(weight) || weight < 0 ){
+    result.innerHTML = `Please Enter Valid Value of weight not ${weight}`;
+  }
+  else{
+    const bmi = (weight/((height*height)/1000)).toFixed(2);
+    result.innerHTML = `<span>${bmi}</span>`;
+  }
+})
+
+```
