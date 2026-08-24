@@ -95,3 +95,51 @@ for(let index=1; index<=100; index++){
 }
 
 ```
+
+
+## Project 5 = (Tab Keys)
+``` javascript
+const insertText = document.querySelector('#insert')
+
+document.addEventListener("keydown", function(e){
+  const keypress = insertText.innerHTML = e.key
+  insertText.innerHTML = e.key
+})
+```
+
+
+## Project 6 = (Unlimited Colors)
+``` javascript
+//generate random color
+//rgb
+const randomColor = function(){
+  const r = Math.floor(Math.random()*256)
+  const g = Math.floor(Math.random()*256)
+  const b = Math.floor(Math.random()*256)
+
+  const color = `rgb(${r},${g},${b})`
+
+  return color
+}
+
+let IntervalID;
+const startChangingColor = function(){
+  if(!IntervalID){
+    IntervalID = setInterval(changeMyColor, 1000)
+  }
+
+  function changeMyColor(){
+    document.querySelector('body').style.backgroundColor = randomColor()
+  }
+}
+
+const stopChangingColor = function(){
+  clearInterval(IntervalID)
+  IntervalID = null;
+}
+
+
+document.querySelector('#start').addEventListener('click',startChangingColor)
+document.querySelector('#stop').addEventListener('click', stopChangingColor)
+
+```
