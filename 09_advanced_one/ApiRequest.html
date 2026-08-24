@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Intro</title>
+</head>
+<body style="background-color: #212121;">
+</body>
+<script>
+    
+    const requestUrl = 'https://api.github.com/users/muditmudgal';
+
+    const xhr = new XMLHttpRequest();  //new object
+    xhr.open('GET', requestUrl)    //type, url
+    xhr.onreadystatechange = function(){   //continously tracking state
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log(data)
+            console.log(typeof data) //string
+            console.log("followers : ", data.followers)
+        }
+    }
+    console.log(xhr.readyState)  //currentState
+    console.log("HERE")
+    xhr.send()  
+</script>
+</html>
